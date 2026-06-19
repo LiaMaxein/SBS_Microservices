@@ -9,7 +9,7 @@ const CommentCreate = ({ postId, onSuccess }) => {
     try {
       await axios.post(`http://localhost:4001/posts/${postId}/comments`, { content });
       setContent("");
-      if (onSuccess) onSuccess(); // ask parent to re-fetch aggregator
+      if (onSuccess) onSuccess(); // ask parent to re-fetch aggregator - PostList neu laden
     } catch (error) {
       console.error("Error submitting comment:", error);
     }
